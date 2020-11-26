@@ -124,7 +124,7 @@ public class GameWindow {
 
     void switchToHomeMenu(){
         showStartMenu();
-        gameController.stopMusic();
+        //gameController.stopMusic();
         gameController.setCurrentLevelZero();
         gameController.clearLevel();
 

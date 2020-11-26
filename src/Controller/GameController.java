@@ -38,7 +38,7 @@ public class GameController {
     private final ArrayList<CombatText> combatList = new ArrayList<>();
     private final ArrayList<EnemyNode> enemyList = new ArrayList<>();
     private final ArrayList<ArrowNode> arrowList = new ArrayList<>();
-    private List<String> musicList = new ArrayList<>();
+    //private List<String> musicList = new ArrayList<>();
     private Node goalBlock;
     private Text text = new Text("");
     private Text hearthText = new Text("");
@@ -47,7 +47,7 @@ public class GameController {
     private Text staminaBarText = new Text("");
     private Text levelText = new Text("");
     private CombatText combatText;
-    private MediaPlayer musicPlayer;
+    //private MediaPlayer musicPlayer;
 
     private final GameMenuView gameMenuView;
     private final AttachImages attachImages = new AttachImages();
@@ -755,7 +755,7 @@ public class GameController {
             }
         });
 
-        setMusic();
+        //setMusic();
         //playMusic();
 
         view.addElementToUiRoot(gameMenuView.createEscapeMenu(view));
@@ -1108,14 +1108,16 @@ public class GameController {
     }
 
     private void setMusic(){
+        /*
         musicList.add("/Music/ChilloutPMLP.WAV");
         musicList.add("/Music/MovieScore ~Spm~.WAV");
         musicList.add("/Music/Rock Pop Vol. 9.WAV");
         musicList.add("/Music/SoftMetalPMLP.WAV");
+         */
     }
 
     private void playMusic(){
-
+        /*
         try {
             musicPlayer.stop();
         }catch (Exception e){
@@ -1142,7 +1144,7 @@ public class GameController {
             musicPlayer.play();
             System.out.println("REPEAT MUSIC");
         });
-
+        */
     }
 
     public void stopMusic(){
