@@ -1,0 +1,19 @@
+The game Morrowporo with the database connection to Oracle
+
+Morrowporo is a 2D Jump´n Run Game with Role-Playing-Game elements and it is based on a JavaFX Framework.
+
+Getting started:
+----------------
+
+start Main.java
+
+
+Controls:
+----------------
+D => go right
+A => go left
+W => Jump
+ESC => Pause
+SPACE => Shoot Arrow
+KEY_1 => Shoot MagicalBolt
+C => Status Menu
