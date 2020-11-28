@@ -457,9 +457,9 @@ public class GameMenuView
             int count = 1;
             for (String currentString : lines) {
                 if (count < 10) {
-                    currentString = "  " + count++ + ". <  " + currentString + "  >";
+                    currentString = "  " + count++ + ". < " + currentString + " >";
                 } else {
-                    currentString = count++ + ". <  " + currentString + "  >";
+                    currentString = count++ + ". < " + currentString + " >";
                 }
                 stringItemList.add(new StringItem(currentString));
             }

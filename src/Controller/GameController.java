@@ -335,6 +335,25 @@ public class GameController {
             e.printStackTrace();
         }
     }
+
+    public Parent createHighscoreMenu(){
+        List<String> lines = new ArrayList<>();
+        String selectPlayer = "SELECT a.Nickname, b.Highscore FROM player_status b INNER JOIN player_data a ON a.Player_id = b.Player_id ORDER BY b.Highscore DESC FETCH FIRST 10 ROWS ONLY";
+
+        try {
+            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "SYSTEM", "root"); // Oracle
+            try (PreparedStatement ps = con.prepareStatement(selectPlayer)) {
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    lines.add(rs.getString(1) + " " + rs.getInt(2));
+                }
+            }
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return gameMenuView.createHighscoreMenu(view, lines);
+    }
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     private boolean moveNodeX(Node currentNode, int x) {
@@ -903,20 +922,6 @@ public class GameController {
 
     public Parent createStartMenu(){
         return gameMenuView.createStartMenu(view);
-    }
-
-    public Parent createHighscoreMenu(){
-        Path file = Paths.get("Highscores.txt");
-        List<String> lines = null;
-
-        if (Files.exists(file)) {
-            try {
-                lines = Files.readAllLines(file);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return gameMenuView.createHighscoreMenu(view, lines);
     }
 
     public Parent createPlayerMenu() {

@@ -38,7 +38,6 @@ public class GameWindow {
     private GameController gameController = new GameController(this);
 
     public GameWindow(Stage primaryStage){
-
         this.primaryStage = primaryStage;
         startScene = new Scene(gameController.createStartMenu());
         this.primaryStage.getIcons().add(new Image("img/StartScreenBackground.png"));
